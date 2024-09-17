@@ -1,0 +1,337 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Background Image Section (Page 1) */
+.back_image {
+    width: 100%;
+    min-height: 100vh; /* Ensures the first section covers the full height */
+    background-image: url(media/Background.png);
+    background-position: center;
+    background-size: cover;
+    padding: 10px 10%;
+    position: relative;
+    z-index: 1;
+}
+
+/* Navbar */
+nav {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed; 
+    top: 0;
+    width: 80%; 
+    z-index: 9999; /* High z-index to stay above all content */
+    transition: background-color 0.3s ease-in-out; /* smooth transition for background color */
+}
+
+
+
+/* Navbar list items */
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #D3D9D4;
+    font-weight: 400;
+}
+
+nav ul li a:hover {
+    text-decoration: none;
+    color: #FFBF00;
+    font-weight: 600;
+}
+
+/* Button styling */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 14px 40px;
+    color: #212A31;
+    background-image: linear-gradient(45deg, #FFBF00, #FCF55F);
+    font-size: 14px;
+    border-radius: 30px;
+    border-top-right-radius: 0;
+    transition: 0.5s;
+}
+
+#home{
+    scroll-margin-top: 300px;
+}
+
+.Title {
+    margin-top: 15%;
+    max-width: 600px;
+    color: #D3D9D4;
+}
+
+.Title h1 {
+    font-size: 70px;
+    color: #D3D9D4;
+}
+
+.Title p {
+    margin: 10px 0 30px;
+    color: #D3D9D4;
+    animation-delay: 0.5s;
+}
+
+.Title .btn {
+    padding: 15px 80px;
+    font-size: 16px;
+    animation-delay: 1s;
+}
+
+.btn:hover {
+    border-top-right-radius: 30px;
+    background-image: linear-gradient(45deg, #FFFAA0, #F5F5DC);
+    transform: scale(1.2);
+}
+
+/* Image styling */
+.feature-img {
+    width: 530px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index:1; /* Ensure this doesn't overlap the navbar */
+}
+
+.feature-img.Animation {
+    animation-delay: 1.5s;
+}
+
+.Animation {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: moveup 0.5s linear forwards;
+}
+
+
+@keyframes moveup {
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+/* Page 2 Styling */
+.Page2 {
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10%;
+    min-height: 100vh;
+    background-image: url(media/Background2.png);
+    background-position: center;
+    background-size:cover;
+    position: relative;
+    z-index: 0; /* Set z-index lower than the navbar to prevent overlap */
+}
+
+.video-section {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.text-section {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.text-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color:#212A31;
+    text-decoration: underline;
+}
+
+.text-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #D3D9D4;
+}
+
+.Page3 {
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10%;
+    min-height: 100vh;
+    background-image: url(media/Background2.png);
+    background-position: center;
+    background-size:cover;
+    position: relative;
+    z-index: 0; /* Set z-index lower than the navbar to prevent overlap */
+}
+
+.slides {
+    display: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.slides{
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.slide_number {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+
+  .dot-container {
+    text-align: center;
+    margin-top: -40px; /* Adjust this value to control how close the dots are to the slides */
+    position: relative; /* This keeps it relative to the Page3 container */
+    bottom: 20px; /* Adjust this value to control the vertical positioning */
+    text-align: center;
+}
+
+  .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .active {
+    background-color: #717171;
+  }
+
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  .Page4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Center the text horizontally */
+    padding: 10px 10%;
+    min-height: 100vh;
+    background-image: url(media/Background2.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+    flex-direction: column; /* Ensure content stacks vertically */
+}
+
+.Page4 h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #212A31;
+    text-decoration: underline;
+}
+
+.Page4 p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #D3D9D4;
+    max-width: 800px; /* Limit the width for better readability */
+    margin: 0 auto; /* Center the paragraph */
+}
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+    display: inline-block;
+    text-decoration: none;
+    padding: 14px 40px;
+    color: #212A31;
+    background-image: linear-gradient(45deg, #FFBF00, #FCF55F);
+    font-size: 14px;
+    border-radius: 30px;
+    border-top-right-radius: 0;
+    border: none; /* Remove the border */
+    transition: 0.5s;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+    border-top-right-radius: 30px;
+    background-image: linear-gradient(45deg, #FFFAA0, #F5F5DC);
+    transform: scale(1.2);
+}
+
+/* Add a background color and some padding around the form */
+.container {
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10%;
+    min-height: 100vh;
+    background-image: url(media/Background2.png);
+    background-position: center;
+    background-size:cover;
+    position: relative;
+    z-index: 0; /* Set z-index lower than the navbar to prevent overlap */
+    
+}
+
+/* Style for the navigation bar */
+.contact-nav{
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    padding: 10px;
+}
+
+.contact-nav.btn {
+    text-decoration: none;
+    color: #212A31;
+    background-image: linear-gradient(45deg, #FFBF00, #FCF55F);
+    padding: 10px 20px;
+    border-radius: 30px;
+    border-top-right-radius: 0;
+    border: none;
+    font-size: 14px;
+}
+
+.contact-nav.btn:hover {
+    background-image: linear-gradient(45deg, #FFFAA0, #F5F5DC);
+    transform: scale(1.1);
+}
